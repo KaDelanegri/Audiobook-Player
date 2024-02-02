@@ -40,6 +40,21 @@ function proximaFaixa() {
     audioTocando = 1;
 }
 
+function voltarFaixa() {
+    if ( capituloAtual === numeroCapitulos ) {
+        capituloAtual = numeroCapitulos;
+    } else {
+        capituloAtual = capituloAtual - 1;
+    }
+
+    audioCapitulo.src = "./books/dom-casmurro/" + capituloAtual + ".mp3";
+    tocarFaixa();
+    audioTocando = 1;
+}
+
 botaoPlayPause.addEventListener('click', tocarOuPausar);
 
 botaoAvancar.addEventListener('click', proximaFaixa);
+
+
+
